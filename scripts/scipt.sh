@@ -27,13 +27,17 @@ cleaning() {
 
 # Function to clean a single test
 clean() {
-  LANG=C.UTF-8 BOARD=native make -C tests/$1/$2/ clean > /dev/null 2>&1
+  local category="$1"
+  local test_name="$2"
+  LANG=C.UTF-8 BOARD=native make -C "tests/$category/$test_name/" clean > /dev/null 2>&1
+  echo "Cleaned: $test_name"
 }
 
 # Function to clean multiple tests
 clean_multi() {
+  local category="$1"
   declare -a tests=("${!2}")
-  for i in ${!tests[@]}; do
-    clean $1 ${tests[$i]} &
+  for test_name in ${tests[@]}; do
+    clean "$category" "$test_name" &
   done
 }
