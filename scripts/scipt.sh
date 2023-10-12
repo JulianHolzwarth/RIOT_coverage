@@ -14,9 +14,10 @@ compile_test() {
 
 # Function to compile multiple tests
 compile_tests() {
+  local category="$1"
   declare -a tests=("${!2}")
-  for i in ${!tests[@]}; do
-    compile_test $1 ${tests[$i]} &
+  for test_name in ${tests[@]}; do
+    compile_test "$category" "$test_name" &
   done
 }
 
