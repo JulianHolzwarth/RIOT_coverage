@@ -1,3 +1,4 @@
+#!/bin/bash
 source ./scripts/scipt.sh
 
 Output_sum() {
