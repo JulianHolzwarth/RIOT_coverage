@@ -21,10 +21,6 @@ compile_tests() {
   done
 }
 
-cleaning() {
-  LANG=C.UTF-8 BOARD=native make -C tests/$1/ clean > /dev/null 2>&1
-}
-
 # Function to clean a single test
 clean() {
   local category="$1"
