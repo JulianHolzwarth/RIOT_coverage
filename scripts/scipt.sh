@@ -4,7 +4,7 @@
 compile_test() {
   local category="$1"
   local test_name="$2"
-  LANG=C.UTF-8 BOARD=native make -C "tests/$category/$test_name/" > /dev/null 2>&1
+  LANG=C.UTF-8 BOARD=native CFLAGS+=" -fprofile-arcs -ftest-coverage -fprofile-abs-path -lgcov -coverage -fPIC" LINKFLAGS+="-fprofile-arcs -ftest-coverage -fprofile-abs-path -lgcov -coverage -fPIC" make -C "tests/$category/$test_name/" > /dev/null 2>&1
   echo s | "./tests/$category/$test_name/bin/native/tests_$test_name.elf" > /dev/null 2>&1 &
   pid=$!
   sleep 10
