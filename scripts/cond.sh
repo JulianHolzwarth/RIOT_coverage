@@ -8,7 +8,6 @@ tests=(cond_order)
 
 compile_tests core tests[@]
 
-wait
 echo results:
 gcovr -r . -s -f "(.+/)?cond\.(c|h)$" --html --html-details -o ../RIOT_coverage/data/cond/complete.html > ../RIOT_coverage/data/cond/ausgabe.txt
 

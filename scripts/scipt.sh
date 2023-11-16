@@ -19,6 +19,7 @@ compile_tests() {
   for test_name in ${tests[@]}; do
     compile_test "$category" "$test_name" &
   done
+  wait
 }
 
 # Function to clean a single test
@@ -36,4 +37,5 @@ clean_multi() {
   for test_name in ${tests[@]}; do
     clean "$category" "$test_name" &
   done
+  wait
 }

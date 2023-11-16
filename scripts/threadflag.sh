@@ -8,7 +8,6 @@ tests=(thread_flags_xtimer thread_flags)
 
 compile_tests core tests[@]
 
-wait
 echo results:
 gcovr -r . -s -f "(.+/)?thread_flags\.(c|h)$" --html --html-details -o ../RIOT_coverage/data/threadflags/complete.html > ../RIOT_coverage/data/threadflags/ausgabe.txt
 

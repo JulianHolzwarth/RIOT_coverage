@@ -8,7 +8,6 @@ tests=(sema sema_inv)
 
 compile_tests sys tests[@]
 
-wait
 echo results:
 gcovr -r . -s -f "(.+/)?sema(_inv)?\.(c|h)$" --html --html-details -o ../RIOT_coverage/data/sema/complete.html > ../RIOT_coverage/data/sema/ausgabe.txt
 

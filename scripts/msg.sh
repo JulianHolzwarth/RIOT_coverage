@@ -10,9 +10,8 @@ tests_sys=(xtimer_msg xtimer_msg_receive_timeout ztimer_msg ztimer64_msg)
 compile_tests core tests_core[@]
 compile_tests sys tests_sys[@]
 
-wait
 echo results:
-gcovr -r . -s -f "(.+/)?msg\.(c|h)$" --html --html-details -o ../RIOT_coverage/data/msg/complete.html > ../RIOT_coverage/data/msg/ausgabe.txt
+gcovr -r . -s -f "((.+/)?msg\.(c|h)$)" --html --html-details -o ../RIOT_coverage/data/msg/complete.html > ../RIOT_coverage/data/msg/ausgabe.txt
 
 echo cleaning msg
 

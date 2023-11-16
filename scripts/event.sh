@@ -8,7 +8,6 @@ tests=(event_periodic_callback event_source event_wait_timeout event_wait_timeou
 
 compile_tests sys tests[@]
 
-wait
 echo results:
 gcovr -r . -s -f "(.+/)?event/(.+/)?"  --html --html-details -o ../RIOT_coverage/data/event/complete.html > ../RIOT_coverage/data/event/ausgabe.txt
 
