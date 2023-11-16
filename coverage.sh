@@ -9,14 +9,14 @@ Output_sum() {
 echo Starting coverage
 
 
-./scripts/mutex.sh &
-./scripts/sema.sh &
-./scripts/cond.sh &
-./scripts/event.sh &
-./scripts/evtimer.sh &
-./scripts/msg.sh &
-./scripts/threadflag.sh &
+./scripts/mutex.sh
+./scripts/sema.sh
+./scripts/cond.sh
+./scripts/event.sh
+./scripts/evtimer.sh
+./scripts/msg.sh
+./scripts/threadflag.sh
 
-wait
+
 echo done coverage
 
