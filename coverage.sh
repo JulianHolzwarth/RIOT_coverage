@@ -6,8 +6,20 @@ Output_sum() {
   echo "" >> daten.txt
 }
 
-echo Starting coverage
+#create folders for results
+if [ ! -d data ]; then
+  echo creating data folders
+  mkdir data
+  mkdir data/cond
+  mkdir data/event
+  mkdir data/evtimer
+  mkdir data/msg
+  mkdir data/mutex
+  mkdir data/sema
+  mkdir data/threadflags
+fi
 
+echo Starting coverage
 
 ./scripts/mutex.sh
 ./scripts/sema.sh
