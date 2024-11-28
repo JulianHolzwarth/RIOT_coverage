@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./scripts/scipt.sh
+source ./scripts/utility.sh
 
 cd ../RIOT
 echo compiling and testing sema

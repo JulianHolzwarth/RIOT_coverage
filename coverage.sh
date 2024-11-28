@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./scripts/scipt.sh
+source ./scripts/utility.sh
 
 Output_sum() {
   cat ../Projekt/$1/ausgabe.txt | sed "s/lines: /$1;/" | sed "s/branches: //" | sed "s/% (/;/" | sed "s/ out of /;/"| sed "s/)//" | sed "s/0.0;0;0/100.0;0;0/" | tr '\n' ';'| sed 's/.$//' >> daten.txt
